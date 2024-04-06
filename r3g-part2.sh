@@ -22,8 +22,8 @@ sed -i "s/OpenWrt /MOWWOM Build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packa
 # 更换为5.10内核
 sed -i '/KERNEL_PATCHVER/cKERNEL_PATCHVER:=5.10' target/linux/ramips/Makefile
 
-# 5.10内核超频1100mhz
-cp $(dirname $0)/extra-files/322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10/
+# 5.10内核超频1000mhz
+cp $(dirname $0)/extra-files-R3G/322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10/
 
 # 修改 design 为默认主题,可根据你喜欢的修改成其他的（不选择那些会自动改变为默认主题的主题才有效果）
 sed -i 's/luci-theme-bootstrap/luci-theme-design/g' feeds/luci/collections/luci/Makefile
